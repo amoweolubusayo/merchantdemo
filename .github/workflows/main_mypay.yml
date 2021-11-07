@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'mypay'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_17450E347E1C4BDAA9BD0D4D96250180 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61D56D3B221545BEBE1D1AB00200703F }}
           package: .
