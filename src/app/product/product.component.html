@@ -1,0 +1,120 @@
+<div id="page">
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-md-5 hidden-xs">
+                            <!-- Default Welcome Message -->
+                            <div class="welcome-msg ">Welcome to ShowCase! </div>
+                            <span class="phone hidden-sm">Call Us: +123.456.789</span> </div>
+
+                        <!-- top links -->
+                        <div class="headerlinkmenu col-lg-8 col-md-7 col-sm-8 col-xs-12">
+                            <div class="links">
+                                <div class="myaccount"><a title="My Account" routerLink="/signup" target="_blank"><i class="fa fa-user"></i><span class="hidden-xs">You are logged in</span></a></div>
+
+                            </div>
+                            <div class="language-currency-wrapper">
+                                <div class="inner-cl">
+                                    <div class="block block-language form-language">
+                                        <div class="lg-cur"> <span> <img src="assets/images/flag-default.jpg" alt="French"> <span class="lg-fr">French</span> <i class="fa fa-angle-down"></i> </span>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a class="selected" href="#"> <img src="assets/images/flag-english.jpg" alt="flag"> <span>English</span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <img src="assets/images/flag-default.jpg" alt="flag"> <span>French</span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <img src="assets/images/flag-german.jpg" alt="flag"> <span>German</span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <img src="assets/images/flag-brazil.jpg" alt="flag"> <span>Brazil</span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <img src="assets/images/flag-chile.jpg" alt="flag"> <span>Chile</span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <img src="assets/images/flag-spain.jpg" alt="flag"> <span>Spain</span> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="block block-currency">
+                                        <div class="item-cur"> <span>NGN </span> <i class="fa fa-angle-down"></i></div>
+                                        <ul>
+                                            <li> <a href="#"><span class="cur_icon">€</span> EUR</a> </li>
+                                            <li> <a href="#"><span class="cur_icon">¥</span> JPY</a> </li>
+                                            <li> <a href="#"><span class="cur_icon">N</span> NGN</a> </li>
+                                            <li> <a class="selected" href="#"><span class="cur_icon">$</span> USD</a> </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- End Default Welcome Message -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- end header -->
+    <br><br><br><br> <br><br><br><br>
+    <!-- category area start -->
+    <div class="jtv-category-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="jtv-single-cat">
+                        <h2 class="cat-title">ADD PRODUCT</h2>
+                        <div class="jtv-product">
+
+
+                            <form class="text-center border p-5" #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+                                <!-- <p class="h4 mb-4"> </p> -->
+
+                                <label for="name"></label>
+                                <input type="text" class="form-control" name="name" ngModel="" placeholder="name" required/>
+                                <label for="description"></label>
+                                <input type="text" class="form-control" name="description" ngModel="" placeholder="description" required />
+                                <label for="price"></label>
+                                <input type="number" class="form-control" name="price" ngModel="" placeholder="price" required/>
+                                <label for="currency"></label>
+                                <input type="currency" class="form-control" name="currency" ngModel="NGN" placeholder="currency(NGN)" readonly/>
+                                <label for="quantity"></label>
+                                <input type="number" class="form-control" name="quantity" ngModel="" placeholder="quantity" required/>
+                                <label for="picture"></label>
+                                <input type="file" class="form-control" ngModel="" placeholder="image" />
+
+
+                                <br>
+                                <div class="col">
+                                    <button type="submit" mat-raised-button mat-raised-button color="primary" class="btn btn-success">
+                                  Submit
+                                  </button>
+                                </div>
+                                <p></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- service area start -->
+                <div class="col-md-4 col-sm-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
