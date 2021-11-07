@@ -11,8 +11,10 @@ import { SharedService } from '../shared/shared.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  message: any; 
-  constructor( 
+  message: any;
+  response: any;
+  durationInSeconds = 10
+  constructor(
     public service: SharedService,
     public model : ProductModel,
     public _snackBar: MatSnackBar,
@@ -22,13 +24,22 @@ export class ProductComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     if(form.valid){
-    this.service.product(form.value).subscribe(    
-      ()=>    
-      {    
-        this.message = "Product uploaded"  
+    this.service.product(form.value).subscribe(
+      (data: ProductModel[]| any)=>
+      {
+        this.response = data;
+        this._snackBar.open(this.response.message,'Close', {
+          duration: this.durationInSeconds * 1000,
+        });
+        this.message = "Product uploaded"
         form.reset();
-      });    
-    //this.router.navigate(["/login"]);
+      }
+      ,error => {
+        this._snackBar.open(this.response.message,'Close',{
+          duration: this.durationInSeconds * 1000
+        });
+        form.reset();
+      });
   }
     console.log(form.value);
   }

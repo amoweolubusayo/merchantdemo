@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  message: any; 
+  message: any;
+  response: any
   durationInSeconds = 10
   constructor(
     public service: SharedService,
@@ -23,12 +24,21 @@ export class SignupComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     if(form.valid){
-    this.service.register(form.value).subscribe(    
-      ()=>    
-      {    
-        this.message = "Registration successful"  
+    this.service.register(form.value).subscribe(
+      (data: RegisterModel[]| any)=>
+      {
+        this.response = data;
+        this._snackBar.open('Sign up successful','Close', {
+          duration: this.durationInSeconds * 1000,
+        });
         form.reset();
-      });    
+      },
+        error => {
+          this._snackBar.open(this.response.message,'Close',{
+            duration: this.durationInSeconds * 1000
+          });
+          form.reset();
+        });
     //this.router.navigate(["/login"]);
   }
     console.log(form.value);

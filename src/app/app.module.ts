@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,7 @@ import { RecurringpaypageComponent } from './recurringpaypage/recurringpaypage.c
     HttpClientModule,
     MatInputModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
   ],
   providers: [RegisterModel,ProductModel,OneTimePaymentModel,RecurringPaymentModel],
   bootstrap: [AppComponent]
